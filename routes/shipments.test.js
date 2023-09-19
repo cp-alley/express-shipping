@@ -81,7 +81,7 @@ describe("POST /", function () {
   /**
    * tests if a missing field will throw an "requires property" error
    */
-  test("throws error if category is missing", async function () {
+  test("throws error if a category is missing", async function () {
     const resp = await request(app).post("/shipments").send({
       productId: 1000,
       addr: "100 Test St",
