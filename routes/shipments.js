@@ -21,7 +21,7 @@ router.post("/", async function (req, res, next) {
     throw new BadRequestError();
   }
   const result = jsonschema.validate(req.body, shipmentSchema, {required:true})
-
+  console.log('result is', result);
   if (!result.valid) {
     // pass validation errors to error handler
     // (the "stack" key is generally the most useful)
