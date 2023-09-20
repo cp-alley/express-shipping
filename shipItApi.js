@@ -14,9 +14,9 @@ async function shipProduct({ productId, name, addr, zip }) {
   const response = await fetch(SHIPIT_SHIP_URL,{
     method: "POST",
     body: JSON.stringify({
-      itemId: productId, 
-      name, 
-      addr, 
+      itemId: productId,
+      name,
+      addr,
       zip,
       key: SHIPIT_API_KEY,
     }),
@@ -24,10 +24,10 @@ async function shipProduct({ productId, name, addr, zip }) {
       "content-type": "application/json"
     }
   });
-  
+
   const shipData = await response.json();
 
   return shipData.receipt.shipId;
 }
 
-module.exports = { shipProduct };
+module.exports = { shipProduct, SHIPIT_SHIP_URL };
